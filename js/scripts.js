@@ -3,19 +3,38 @@
 $(function() {
   $('form#form').submit(function(event) {
     event.preventDefault();
-    var numeralNumber = $('input#inputUser').val();
-    var result = addFunction(numeralNumber);
-    $('#result h3').text(result);
-
-    });
-});
+    var userInput = parseInt($('input#inputUser').val());
 
 
+
+
+
+    var romanNumbers = ['I','V','X','L','C','D','M']
+    var arabicNumbers = ['1','5','10','50','100','500','1000']
 
 // Back-End Logic
-var romanNumerals = {I:1, V:5, X:10, L:50, C:100, D:500, M:1000};
+
+var convert = function(number, position) {
+  if (value < 4 ) { romanNumbers[6].repeat(2)  }
+})
 
 
-var addFunction = function(parameter1, parameter2) {
-  return parameter1 + parameter2
-};
+
+
+
+var arabicThousands = Math.floor(userInput / 1000);
+alert(arabicThousands);
+var arabicHundreds = Math.floor((userInput - arabicThousands * 1000) / 100);
+alert(arabicHundreds);
+var arabicTens = Math.floor((userInput - (arabicThousands * 1000 + arabicHundreds * 100)) / 10);
+alert(arabicTens);
+var arabicOnes = Math.floor((userInput - (arabicThousands * 1000 + arabicHundreds * 100 + arabicTens * 10)) / 1);
+alert(arabicOnes);
+
+
+// var romanThousands = convert(arabicThousands, romanNumbers[6])
+// var romanHundreds =
+// var romanTens =
+// var romanOnes =
+  });
+});
